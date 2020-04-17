@@ -21,5 +21,6 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run the deploy process.
       run: |
+        npm install
         tsc deploy.ts
         node deploy.js "${{ secrets.deploy_ftp_host }}" "${{ secrets.deploy_ftp_root }}" "${{ secrets.deploy_ftp_user }}" "${{ secrets.deploy_ftp_pass }}" "${{ secrets.slack_webhook_hash }}"
